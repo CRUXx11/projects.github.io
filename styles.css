@@ -2,6 +2,10 @@ body {
   font-family: "Open Sans";
   font-style: normal;
 }
+.mobile {
+  display: none;
+}
+
 /* Styles for container */
 .container {
   background-image: url("./images/BG\ IMAGE.png");
@@ -16,25 +20,41 @@ body {
   background-color: #16171a;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   padding: 10px;
 }
-.navbar-brand img {
-  float: right;
+.navbar-brand {
+  margin-right: auto; /* add margin-right auto to align brand to right */
 }
+
+.navbar-brand img {
+  max-width: 100%; /* add max-width to make the image responsive */
+}
+
 .navbar a,
 .navbar img {
   color: white;
   text-decoration: none;
   font-size: 1.2vw;
   margin: 0 10px;
+  white-space: nowrap;
 }
 .navbar a:hover {
   color: #aa69d1;
 }
 .active {
-  color: #aa69d1;
+  color: #aa69d1 !important;
+}
+.navbar .bi-arrow-up-right {
+  color: #aa69d1 !important;
+  font-size: 0.7vw;
+  vertical-align: text-top;
+}
+.bi-arrow-up-right {
+  color: white;
+  font-size: 0.4vw;
+  vertical-align: super;
 }
 .info-container {
   position: absolute;
@@ -68,6 +88,7 @@ body {
   padding: 10px 20px;
   margin: 10px;
   transform: skew(-20deg);
+  white-space: nowrap;
 }
 
 .rhomboid button:hover {
@@ -180,6 +201,8 @@ body {
   position: relative;
 }
 .aboutUs-container {
+  display: flex;
+  align-items: center;
   position: absolute;
   left: 15%;
   top: 48%;
@@ -271,23 +294,90 @@ body {
   color: white;
 }
 
-/* Styles for responsive design */
-@media screen and (max-width: 768px) {
-  .navbar-nav .nav-item:not(:first-child) {
+/* Add media query for smaller screens */
+@media only screen and (max-width: 767px) {
+  .web {
     display: none;
   }
-  .navbar-nav .nav-item:last-child .nav-link {
-    margin-right: 0;
+  .mobile {
+    display: block;
   }
-  .navbar-toggler {
-    margin: 0 10px;
+  .container-fluid {
+    display: flex !important;
+    justify-content: space-around !important;
+  }
+  .container-fluid i {
+    color: white;
+    font-size: 3vw;
+  }
+  .midpart {
+    color: white;
+    text-align: center;
+  }
+  .midpart h1 {
+    font-size: 10vw;
+  }
+  .midpart p {
+    padding-left: 10vw;
+    padding-right: 10vw;
+  }
+  .mfindMore {
+    flex-direction: column;
+  }
+  .mfindMore .btn {
+    width: 50vw;
+  }
+  .mfindMore .btn span {
+    font-size: 2.5vw;
+  }
+  .bi-arrow-up-right {
+    font-size: 1.5vw;
+  }
+  #MagicCarousel .carousel-item {
+    width: 80%;
+    margin: auto;
+  }
+
+  #MagicCarousel .carousel-caption {
+    text-align: center;
+  }
+
+  #MagicCarousel .carousel-caption h1 {
+    font-size: 3rem;
+  }
+
+  #MagicCarousel .carousel-caption h2 {
+    font-size: 2rem;
+    margin-top: 2rem;
+  }
+
+  #MagicCarousel img {
+    width: 100%;
+    height: auto;
+  }
+  .card-title {
+    text-align: center;
+  }
+  /* Custom CSS */
+  .mcard {
+    height: 70vh;
+    width: 50vw;
+    left: 15vw;
+  }
+
+  .mcard-img-top {
+    height: 100%;
+    width: auto;
+    margin: 0 auto;
+  }
+  .mcard img {
+    height: 100% !important;
+  }
+  .footer {
+    width: 35vw;
+  }
+  .footer p {
+    font-size: 2vw;
+    padding: 0px;
   }
 }
-/* @media screen and (max-width: 991px) {
-  .navbar-nav .nav-item {
-    margin: 10px 0;
-  }
-  .navbar-nav .nav-item:last-child {
-    margin-right: 0;
-  }
-} */
